@@ -1,5 +1,4 @@
 const prompt = require("prompt-sync")()
-const _ = require('lodash');
 
 //1) INICIALIZAR EL JUEGO --> array de jugadores (no solo con dos)
 function init_game(...args) {
@@ -17,6 +16,7 @@ const ingresar_jugada = (jugador, puntaje, lanzamientos, game) => {
   const bulls = {'DB': 50, 'SB':25}
   const nuevo_puntaje = puntaje - lanzamientos.reduce((prev, curr) => {
     if (bulls[curr]) return prev+bulls[curr]
+    
     const [mult, puntaje] = curr.split(',').map(elem => + elem)
     return prev+(mult * puntaje)
   },0 )
