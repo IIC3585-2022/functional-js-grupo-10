@@ -5,25 +5,14 @@ const _ = require('lodash');
 function init_game(...args) {
   console.log(`Juego inicializado con los jugadores ${args}\n`)
   const array_nombre = [...args[0]];
-  console.log("wenaaa")
-  console.log(array_nombre)
   const array_puntaje = array_nombre.map((element) => {
     return [element, 501];
   });
   return array_puntaje;
 }
 
-
 //1) OUTPUT [ [ 'Jaime', 150 ], [ 'Emma', 150 ] ]
 
-// const a = init_game('Jaime', 'Emma');
-// a.forEach(element => console.log(element));
-
-//2) Una función que reciba el nombre del jugador, 
-//su puntaje y sus lanzamientos y devuelva el 
-//nuevo score del jugador
-
-//jugador es un numero  en este caso 
 const ingresar_jugada = (jugador, puntaje, lanzamientos, game) => {
   const bulls = {'DB': 50, 'SB':25}
   const nuevo_puntaje = puntaje - lanzamientos.reduce((prev, curr) => {
@@ -49,25 +38,21 @@ const play_turn = (game, turn, finish) => {
   console.log(`${game[turn][0]} queda con ${game[turn][1]} puntos`)
   finish = check_finish(turn, game)
   console.log(finish ? `Felicidades ${game[turn][0]}`: '')
-  console.log("imprimiendo en play turn")
-  console.log(game)
-  console.log(game.length)
 
   if (turn == (game.length - 1)){
     turn = 0
   } else {
     turn = turn + 1
   }
-  console.log(`turno ahora es ${turn}`)
   play_turn(game, turn, finish)
 }
+
 const play_game = (...args) => {
   // variables de estado
   let game;
   let turn = 0
   let finish = false;
   game = init_game(args);
-  turn = 0
   play_turn(game, turn, finish)
 }
 
