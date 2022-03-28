@@ -17,9 +17,9 @@ const ingresar_jugada = (game, jugador, lanzamientos) => {
   const puntaje = game[jugador][1]
   const bulls = {'DB': 50, 'SB':25}
   const nuevo_puntaje = puntaje - lanzamientos.reduce((prev, curr) => {
-    if (bulls[curr]) return prev+bulls[curr]
+    if (bulls[curr]) return prev + bulls[curr]
     const [mult, puntaje] = curr.split(',').map(elem => + elem)
-    return prev+(mult * puntaje)
+    return prev + (mult * puntaje)
   },0 )
   game[jugador][1] = nuevo_puntaje < 0 ? 0: nuevo_puntaje
   
@@ -45,7 +45,7 @@ const play_turn = (game, turn, finish) => {
   finish = check_finish(turn, game)
   console.log(finish ? `Felicidades ${game[turn][0]}`: '')
 
-  turn = (turn + 1)%game.length
+  turn = (turn + 1) % game.length
   play_turn(game, turn, finish)
 }
 
