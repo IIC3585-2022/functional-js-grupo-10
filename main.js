@@ -15,13 +15,14 @@ function init_game(...args) {
 // Funcion que calcula puntajes despues de ingresar una jugada válida
 const ingresar_jugada = (game, jugador, lanzamientos) => {
   const puntaje = game[jugador][1]
-  const bulls = {'DB': 50, 'SB':25}
+  const bulls =['SB', 'DB']
   const nuevo_puntaje = puntaje - lanzamientos.reduce((prev, curr) => {
-    if (bulls[curr]) return prev + bulls[curr]
+    const match = elem => elem === curr
+    if (bulls.find(match)) return prev + (bulls.findIndex(match)+1)*25
     const [mult, puntaje] = curr.split(',').map(elem => + elem)
     return prev + (mult * puntaje)
   },0 )
-  game[jugador][1] = nuevo_puntaje < 0 ? 0: nuevo_puntaje
+  game[jugador][1] = nuevo_puntaje < 0 ? nuevo_puntaje*-(1): nuevo_puntaje
   
 } //OUTPUT: Actualiza el puntaje del jugador
  
