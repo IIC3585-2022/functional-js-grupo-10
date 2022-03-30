@@ -23,7 +23,7 @@ const ingresar_jugada = (game, jugador, lanzamientos) => {
     const [mult, puntaje] = curr.split(',').map(elem => + elem)
     return prev + (mult * puntaje)
   },0 )
-  game[jugador][1] = nuevo_puntaje < 0 ? nuevo_puntaje*-(1): nuevo_puntaje
+  game[jugador][1] = nuevo_puntaje < 0 ? 0: nuevo_puntaje
   
 } //OUTPUT: Actualiza el puntaje del jugador
  

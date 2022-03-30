@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "bull": "^4.8.1",
     "lodash": "^4.17.21",
     "prompt-sync": "^4.2.0"
   }
