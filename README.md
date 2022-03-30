@@ -8,7 +8,9 @@ Tarea1- Programación funcional
 ## Integrantes
 
 Melisa Rodriguez
+
 Diego Gonzalez
+
 Maximiliano Schudeck
 
 ## Ejecución
