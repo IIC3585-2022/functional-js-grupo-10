@@ -18,7 +18,8 @@ const ingresar_jugada = (game, jugador, lanzamientos) => {
   const bulls =['SB', 'DB']
   const nuevo_puntaje = puntaje - lanzamientos.reduce((prev, curr) => {
     const match = elem => elem === curr
-    if (bulls.find(match)) return prev + (bulls.findIndex(match)+1)*25
+    const index = bulls.findIndex(match)
+    if (index >=0) return prev + (bulls.findIndex(match)+1)*25
     const [mult, puntaje] = curr.split(',').map(elem => + elem)
     return prev + (mult * puntaje)
   },0 )
