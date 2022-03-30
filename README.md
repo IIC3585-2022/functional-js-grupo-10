@@ -3,3 +3,14 @@
 # Tarea {1} - Grupo{10}
 
 Tarea1- Programación funcional
+
+
+## Integrantes
+
+Melisa Rodriguez
+Diego Gonzalez
+Maximiliano Schudeck
+
+## Ejecución
+
+Para ejecutar el programa, nosotros usamos `NodeJS`. Pueden instalar las dependencias con el comando `npm install` en la terminal en esta carpeta. Luego, para ejecutar el juego, basta con usar el comando `npm main.js`
